@@ -1,0 +1,48 @@
+1. Get /ping
+
+curl -X GET localhost:8080/ping
+
+2. GET /listAll
+
+curl -X GET localhost:8080/listAll
+
+3a. POST /addBook
+
+curl -H "Content-Type: application/json" -X POST -d "{\"type\": \"Book\", \"name\": \"The Design of Everyday Things\", \"notes\": \"must have for UX designers\", \"priceInDollar\": 23.75,
+\"weightInKg\": 0.372, \"expectedDeliveryDateTime\": \"2022-06-17T10:40\", \"author\": \"Don Norman\" }" localhost:8080/addBook
+
+3b. POST /addElectronic
+
+curl -H "Content-Type: application/json" -X POST -d "{\"type\": \"Electronic\", \"name\": \"iPhone\", \"notes\": \"For Mom\", \"priceInDollar\": 23.75,
+\"weightInKg\": 2, \"expectedDeliveryDateTime\": \"2022-06-17T10:40\", \"envHandlingFeeInDollar\": 999.99}" localhost:8080/addElectronic
+
+3c. POST /addPerishable
+
+curl -H "Content-Type: application/json" -X POST -d "{\"type\": \"Perishable\", \"name\": \"Banana\", \"notes\": \"For Grandma\", \"priceInDollar\": 4.5,
+\"weightInKg\": 1, \"expectedDeliveryDateTime\": \"2022-06-17T10:40\", \"expiryDateTime\": \"2022-06-17T14:40\"}" localhost:8080/addPerishable
+
+4. POST /removePackage
+
+curl -X POST localhost:8080/removePackage/1
+
+^ This will remove the package with id of 1, which is the first created package. Not necessarily removes the top most displayed package as that is ordered by expected delivery date.
+
+5. GET /listOverduePackage
+
+curl -X GET localhost:8080/listOverduePackage
+
+
+6. GET /listUpcomingPackage
+
+curl -X GET localhost:8080/listUpcomingPackage
+
+
+7. POST /markPackageAsDelivered
+
+curl -X POST localhost:8080/markPackageAsDelivered/2
+
+^ marks package as delivered/ undelivered for package with id 2.
+
+8. GET /exit
+
+curl -X GET localhost:8080/exit

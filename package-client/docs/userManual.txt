@@ -1,0 +1,38 @@
+User Manual of Amazing Package Tracker
+
+Note: This user manual is the same with Brian Rahadi's Assignment 3 User manual. The main difference here is that the
+program saves the Json file in the server as opposed in the client-side.
+
+Operation 1: List all packages
+The first time program is started, No Packages to Show will be seen as there is no package in the program.
+Later on, this message will be gone as long as there is at least 1 package exists in the category (All, Overdue, Upcoming).
+All packages are sorted based on expected delivery dates.
+
+If program has list.json already with some packages, the started program will automatically show some packages.
+
+Operation 2: Add a package
+To add a package, just click the bottom button called "Add package". After clicked, it will summon a new frame that user
+need to interact with (Added package or Cancel) before going on to the main frame again.
+For a package to be successfully added, every field except notes need to be filled. If not, an error message will appear
+when clicked and forces user to fix it first before package can be added. The error message will be detailed and shows
+all the problem that user has (at most 5 error Name, Price, Weight, Delivery Date, and Author/ Env Fee/ Expiry Date)
+
+Operation 3: Remove a package
+Removing a package is easy. Just click the remove button shown in the bottom of each the gray package box. After this,
+the package panel will refresh itself and reset the package number again.
+
+Operation 4: List overdue packages
+To list all overdue packages, just click the top middle button that is called "Overdue". It will list all undelivered packages
+with expected delivery dates before the current date (and time) ordered by expected delivery dates (old to new).
+
+Operation 5: List upcoming packages.
+To list all upcoming packages, just click the top right button that is called "Upcoming". It will list all undelivered packages
+with expected delivery dates on or after the current date (and time) ordered by expected delivery dates (old to new).
+
+Operation 6: Mark package as delivered
+To mark a package as delivered, just tick the delivered checkbox in the gray package box. The GUI will dynamically refresh
+its package panel. To test it, all delivered packages will no longer be shown in either overdue/ upcoming packages.
+
+Operation 7: Exit
+To exit, click the Close (X) button on the java GUI. This will also prompt the GUI to save the current packages (act as
+checkpoint) into list.json.
